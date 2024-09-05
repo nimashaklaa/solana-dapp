@@ -1,9 +1,4 @@
-import React from 'react'
+import { useLocalStorage } from "@solana/wallet-adapter-react";
+import { FC, ReactNode, createContext, useContext } from "react";
 
-const AutoConnectProvider = () => {
-  return (
-    <div>AutoConnectProvider</div>
-  )
-}
-
-export default AutoConnectProvider
+export interface AutoConnectContextState {}
