@@ -25,10 +25,10 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { networkConfiguration } = useNetworkConfiguration();
   const network = networkConfiguration as WalletAdapterNetwork;
 
-  // const originalEndPoint = useMemo(() => clusterApiUrl(network, [network]));
-  const originalEndPoint = useMemo(() => {
-    return clusterApiUrl(network); // Correct usage of clusterApiUrl
-  }, [network]); // Dependency array correctly added here
+  const originalEndPoint = useMemo(() => clusterApiUrl(network), [network]);
+  // const originalEndPoint = useMemo(() => {
+  //   return clusterApiUrl(network); // Correct usage of clusterApiUrl
+  // }, [network]); // Dependency array correctly added here
 
   let endpoint: string;
   //   taking this variable because the network RPC endpoint this particular wallet provider will give you for the main net is not working, so we cannot use it for the main net,
@@ -73,9 +73,7 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-export const ConnectionProvider: FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+export const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <NetworkConfigurationProvider>
