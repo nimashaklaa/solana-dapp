@@ -40,7 +40,7 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   } else {
     endpoint = originalEndPoint;
   }
-
+  //hi
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
