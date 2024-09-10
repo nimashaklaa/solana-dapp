@@ -34,7 +34,9 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   //   taking this variable because the network RPC endpoint this particular wallet provider will give you for the main net is not working, so we cannot use it for the main net,
   //   but it is working fine on the test net or the dev net, so we have to hard code that data to the main net
   if (network == "mainnet-beta") {
-    endpoint = "URL";
+    // endpoint = "URL";
+    endpoint =
+      "https://solana-mainnet.g.alchemy.com/v2/iPfRXOatfJ-5wATOjoP6tjxQ1HIN7-Md";
   } else if (network == "devnet") {
     endpoint = originalEndPoint;
   } else {
